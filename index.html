@@ -33,6 +33,7 @@
       color: #1877f2;
       text-decoration: none;
       font-weight: 500;
+      cursor: pointer;
     }
     a:hover {
       text-decoration: underline;
@@ -69,5 +70,19 @@
     <li><a href="world-cup.mp3">World Cup</a></li>
     <li><a href="yeat-spongi.mp3">Yeat Spongi</a></li>
   </ul>
+
+  <audio id="boing" src="boing.mp3" preload="auto"></audio>
+
+  <script>
+    const boing = document.getElementById('boing');
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        boing.currentTime = 0;
+        boing.play();
+      });
+    });
+  </script>
 </body>
 </html>
